@@ -8,9 +8,10 @@ namespace DNotes.Data
 {
     public class Character
     {
-        public Guid CharacterId { get; set; }
-        public string CharacterName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int IconId { get; set; }
         public CharacterClass Class { get; set; }
-        public User Owner { get; set; }
+        public int OwnerUserId { get; set; }
     }
 }

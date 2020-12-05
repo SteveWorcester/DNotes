@@ -7,10 +7,11 @@ namespace DNotes.Data
 {
     public class User
     {
-        public Guid UserId { get; set; }
-        public List<Campaign> Campaigns { get; set; }
-        public List<Character> Characters { get; set; }
-        public string PlayerName { get; set; }
+        public int Id { get; set; }
+        public Guid RecoveryGuid { get; set; }
+        public string UserName { get; set; }
         public string Email { get; set; }
+        public List<int> CampaignIds { get; set; }
+        public List<int> CharacterIds { get; set; }
     }
 }

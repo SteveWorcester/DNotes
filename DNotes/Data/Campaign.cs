@@ -7,11 +7,12 @@ namespace DNotes.Data
 {
     public class Campaign
     {
-        public Guid CampaignId { get; set; }
+        public int Id { get; set; }
+        public Guid ShareGuid { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public List<Character> AllCharacters { get; set; }
-        public List<Note> TopLevelNotes { get; set; }
-        public List<Note> AllNotes { get; set; }
+        public List<int> PendingCharacterIds { get; set; }
+        public List<int> ActiveCharacterIds { get; set; }
+        public List<int> NoteIds { get; set; }
     }
 }

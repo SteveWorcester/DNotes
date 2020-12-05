@@ -1,3 +1,4 @@
+using DNotes.Context;
 using DNotes.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
@@ -10,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DNotes
 {
@@ -28,7 +30,14 @@ namespace DNotes
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddControllersWithViews();
+
+            services.AddDbContext<DNotesDbContext>(o =>
+            {
+                o.UseSqlServer("data source=.;" +
+                    "initial catalog = MyImagesDb;" +
+                    "integrated security = true");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
